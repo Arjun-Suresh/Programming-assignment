@@ -40,6 +40,8 @@ void sequence::remove(long int min, long int max)
 	}
 	if (curMax < curMin || curMin == intervalsList.size())
 		return; //Input interval is out of bounds or doesn't overlap with any interval in the set
+        if (curMax == intervalsList.size())
+		curMax--;
 	long int counter = curMin + 1;
 	while (counter < curMax)
 	{
@@ -154,6 +156,6 @@ std::string sequence::outputFormat()
 	else
 		formattedString = formattedString + ']';
 	char* result = new char[formattedString.size()+1];
-	strcpy_s(result, formattedString.size()+1, formattedString.c_str());
+	strcpy(result, formattedString.c_str());
 	return std::string(result);
 }

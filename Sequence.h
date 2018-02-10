@@ -1,7 +1,7 @@
 #pragma once
 #include<iostream>
 #include<vector>
-#include <string>
+#include <string.h>
 class interval
 {
 	//Holds each interval
